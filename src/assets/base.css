@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .bg-maroon-600 { background-color: #800000; }
+  .bg-maroon-700 { background-color: #680000; }
+  .focus\:ring-maroon-500 { box-shadow: 0 0 0 2px rgba(128, 0, 0, 0.5); }
+}
