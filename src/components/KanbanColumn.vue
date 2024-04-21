@@ -1,12 +1,7 @@
 <template>
-  <div class="bg-gray-100 p-4 rounded-lg shadow space-y-4 w-72 mx-2">
+  <div class="p-4 rounded-lg shadow space-y-4 w-72 mx-2" style="background-color: #ffecbe">
     <h2 class="text-xl font-bold text-center">{{ column.name }}</h2>
-    <draggable
-      class="space-y-2"
-      v-model="column.cards"
-      itemKey="id"
-      group="cards"
-    >
+    <draggable class="space-y-2" v-model="column.cards" itemKey="id" group="cards">
       <template #item="{ element }">
         <KanbanCard :card="element" />
       </template>
@@ -23,6 +18,4 @@ import KanbanCard from './KanbanCard.vue'
 defineProps<{
   column: Column
 }>()
-
-
 </script>

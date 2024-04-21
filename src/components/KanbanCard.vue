@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-white rounded-md shadow p-4 border border-gray-200 hover:bg-blue-50">
+  <div
+    class="rounded-md shadow p-4 border border-gray-200 hover:bg-blue-50"
+    style="background-color: #fff8e7"
+  >
     <h3 class="text-md font-semibold break-all">{{ card.title }}</h3>
     <p class="text-sm text-gray-600 break-words">{{ card.description }}</p>
   </div>

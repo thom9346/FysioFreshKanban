@@ -2,11 +2,19 @@
 import NewCardForm from '@/components/NewCardForm.vue'
 import KanbanBoard from '../components/KanbanBoard.vue'
 </script>
-
 <template>
-  <main class="flex flex-col items-center justify-start p-4">
-    <img src="../assets/images/fflogo.png" alt="Vue Logo" class="mx-auto block h-16" />
-    <NewCardForm />
-    <KanbanBoard />
-  </main>
+  <div class="min-h-screen" style="background-color: #f2b8b4">
+    <!-- Full screen height container -->
+    <!-- Logo section with white background -->
+    <div class="bg-white p-4">
+      <img src="../assets/images/fflogo.png" alt="Fysiofresh Logo" class="h-14 mx-auto" />
+    </div>
+
+    <!-- Main content section with pink background -->
+    <div class="flex flex-col items-center justify-start p-4">
+      <h1 class="font-bold h-10">Kanban Board</h1>
+      <NewCardForm />
+      <KanbanBoard />
+    </div>
+  </div>
 </template>

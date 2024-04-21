@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light-blue-100 p-4 md:p-6 rounded-lg shadow-md">
+  <div class="p-4 md:p-6 rounded-lg shadow-md" style="background-color: #fbf0ef">
     <form @submit.prevent="addNewCard" class="flex flex-col md:flex-row items-end gap-4">
       <div class="flex flex-col flex-1 mb-4 md:mb-0">
         <label for="title" class="text-sm font-medium text-gray-700">Title</label>
@@ -9,6 +9,7 @@
           type="text"
           placeholder="Enter title"
           class="mt-1 border p-2 rounded"
+          style="background-color: #fffcfc"
         />
       </div>
       <div class="flex flex-col flex-1 mb-4 md:mb-0">
@@ -18,6 +19,7 @@
           v-model="newCardDescription"
           placeholder="Enter description"
           class="mt-1 border p-2 rounded resize-none"
+          style="background-color: #fffcfc"
         ></textarea>
       </div>
       <button
