@@ -6,7 +6,6 @@
       v-model="column.cards"
       itemKey="id"
       group="cards"
-      @end="handleDrop"
     >
       <template #item="{ element }">
         <KanbanCard :card="element" />
@@ -25,7 +24,5 @@ defineProps<{
   column: Column
 }>()
 
-const handleDrop = () => {
-  console.log('Dropping...')
-}
+
 </script>

@@ -5,7 +5,7 @@ import KanbanBoard from '../components/KanbanBoard.vue'
 
 <template>
   <main class="flex flex-col items-center justify-start p-4">
-    <img src="../assets/images/fflogo.png" alt="Vue Logo" class="mx-auto block" />
+    <img src="../assets/images/fflogo.png" alt="Vue Logo" class="mx-auto block h-16" />
     <NewCardForm />
     <KanbanBoard />
   </main>
