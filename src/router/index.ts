@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import KanbanBoard from '../components/KanbanBoard.vue'
 import KanbanView from '@/views/KanbanView.vue'
 
 const router = createRouter({
