@@ -60,6 +60,12 @@ export const useKanbanStore = defineStore('kanban', {
       if (!column) return
 
       column.cards = column.cards.filter((card) => card.id !== cardId)
+    },
+    updateColumnCards(columnName: string, newCards: Card[]) {
+      const column = this.columns.find((c) => c.name === columnName)
+      if (column) {
+        column.cards = newCards
+      }
     }
   }
 })
