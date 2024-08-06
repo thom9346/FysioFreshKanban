@@ -1,6 +1,8 @@
+import KanbanColumn from '@/components/KanbanColumn.vue';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { setActivePinia, createPinia } from 'pinia';
 import { useKanbanStore } from '@/stores/kanban';
+import { mount } from '@vue/test-utils'
 
 describe('KanbanStore', () => {
   let kanbanStore: ReturnType<typeof useKanbanStore>;;
@@ -30,5 +32,32 @@ describe('KanbanStore', () => {
       title: testCard.title,
       description: testCard.description
     }));
+  });
+
+  it('deletes a card from a column', () => {
+    const todoColumn = kanbanStore.columns.find(column => column.name === 'Todo');
+    const initialCardCount = todoColumn?.cards.length || 0;
+    const cardToDelete = todoColumn?.cards[0];
+
+    if (cardToDelete) {
+      kanbanStore.deleteCard('Todo', cardToDelete.id);
+      
+      expect(todoColumn?.cards.length).toBe(initialCardCount - 1);
+      expect(todoColumn?.cards).not.toContainEqual(expect.objectContaining({
+        id: cardToDelete.id
+      }));
+    }
+  });
+
+  it('updates cards in a column', () => {
+    const newCards = [
+      { id: '1', title: 'New Card 1', description: 'Description 1' },
+      { id: '2', title: 'New Card 2', description: 'Description 2' }
+    ];
+
+    kanbanStore.updateColumnCards('Todo', newCards);
+
+    const todoColumn = kanbanStore.columns.find(column => column.name === 'Todo');
+    expect(todoColumn?.cards).toEqual(newCards);
   });
 });
