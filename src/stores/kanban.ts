@@ -54,6 +54,12 @@ export const useKanbanStore = defineStore('kanban', {
       }
 
       column.cards.push(newCard)
+    },
+    deleteCard(columnName: string, cardId: string) {
+      const column = this.columns.find((c) => c.name === columnName)
+      if (!column) return
+
+      column.cards = column.cards.filter((card) => card.id !== cardId)
     }
   }
 })
